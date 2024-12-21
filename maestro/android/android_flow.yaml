@@ -1,0 +1,9 @@
+appId: com.example.semantics_app
+---
+
+- launchApp:
+    appId: "com.example.semantics_app"
+    clearState: true
+- runFlow: "home_page_flow.yaml"
+- runFlow: "names_page_flow.yaml"
+- back

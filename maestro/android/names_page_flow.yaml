@@ -1,0 +1,17 @@
+appId: com.example.semantics_app
+---
+
+- assertVisible:
+    id: "names_2_list_tile"
+- tapOn:
+    id: "names_0_open_more_popup"
+    retryTapIfNoChange: false
+    enabled: false
+- tapOn:
+    id: "names_1_open_more_popup"
+    retryTapIfNoChange: false
+    waitToSettleTimeoutMs: 200
+- scrollUntilVisible:
+    element:
+      id: "names_4_open_more_popup"
+    timeout: 200
