@@ -26,6 +26,7 @@ make dependencies
   * [flutter_lints][dependency_flutter_lints]
 * Tests
   * [mocktail][dependency_mocktail]
+  * [integration_test][dependency_integration_test]
 
 ## Troubleshooting
 
@@ -48,6 +49,7 @@ make dependencies
 [dependency_maestro]: https://maestro.mobile.dev/
 [dependency_flutter_lints]: https://pub.dev/packages/flutter_lints
 [dependency_mocktail]: https://pub.dev/packages/mocktail
+[dependency_integration_test]: https://pub.dev/packages/integration_test
 [useful_android_studio]: https://developer.android.com/studio
 [useful_virtual_device]: https://developer.android.com/studio/run/managing-avds.html
 [useful_developer_options]: https://developer.android.com/studio/debug/dev-options.html#enable

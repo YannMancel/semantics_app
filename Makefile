@@ -52,7 +52,7 @@ analyze: ## Analyze Dart code of the project
 format-analyze: format analyze ## Format & Analyze Dart code of the project
 
 .PHONY: test
-test: ## Run all tests with coverage - Isar needs to [--concurrency=1] or [-j 1]
+test: ## Run all tests with coverage
 	@$(call print_color_message,"Run all tests with coverage")
 	$(FLUTTER) test \
 		--coverage \
@@ -61,6 +61,12 @@ test: ## Run all tests with coverage - Isar needs to [--concurrency=1] or [-j 1]
 	genhtml coverage/lcov.info \
 		--output-directory coverage/html
 	open coverage/html/index.html
+
+.PHONY: integration-test
+integration-test: ## Run all integration tests
+	@$(call print_color_message,"Run all integration tests")
+	$(FLUTTER) test \
+		integration_test/
 
 .PHONY: run
 run: ## Run application by default debug version
