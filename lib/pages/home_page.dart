@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
-import 'package:semantics_app/names_page.dart';
+import 'package:semantics_app/core/l10n/l10n_extension.dart';
+import 'package:semantics_app/pages/names_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -16,29 +17,29 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Semantics.fromProperties(
+        title: Semantics.fromProperties(
           excludeSemantics: true,
           properties: SemanticsProperties(
             header: true,
-            sortKey: OrdinalSortKey(0),
-            label: 'This page displays a text in the centre '
-                'and a button in the bottom right-hand corner.',
+            sortKey: const OrdinalSortKey(0),
+            label: l10n.homePageSemantics,
           ),
-          child: Text('Home Page'),
+          child: Text(l10n.homePage),
         ),
       ),
-      body: const Center(
-        child: Text('Go to names page'),
+      body: Center(
+        child: Text(l10n.goToNamesPage),
       ),
       floatingActionButton: Semantics.fromProperties(
         key: const Key('button'),
         excludeSemantics: true,
         properties: SemanticsProperties(
           identifier: 'home_go_to_names_page',
-          label: 'button to go to names page',
+          label: l10n.homeButtonSemantics,
           enabled: true,
           button: true,
           onTap: () => _onPressed(context),

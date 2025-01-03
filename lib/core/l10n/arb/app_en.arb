@@ -1,0 +1,24 @@
+{
+  "homePageSemantics": "This page displays a text in the centre and a button in the bottom right-hand corner.",
+  "homePage": "Home Page",
+  "goToNamesPage": "Go to names page",
+  "homeButtonSemantics": "Button to go to names page.",
+  "namesPageSemantics": "This page displays a list of items. Each item has a name and a button. The button is located to the right of the item.",
+  "namesPage": "Names Page",
+  "namesListTileSemantics": "List tile of {name}.",
+  "@namesListTileSemantics": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "namesButtonSemantics": "Button of {name} to open more popup.",
+  "@namesButtonSemantics": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  }
+}

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:semantics_app/constants.dart';
-import 'package:semantics_app/home_page.dart';
+import 'package:semantics_app/core/constants.dart';
+import 'package:semantics_app/pages/home_page.dart';
 
 import 'helper.dart';
 
@@ -19,7 +19,7 @@ void main() {
     'WHEN we navigate in the application, '
     'THEN UI is found.',
     (tester) async {
-      final (:navigatorObserver) = await tester.myPumpWidget(
+      final (:navigatorObserver, :l10n) = await tester.myPumpWidget(
         widget: const HomePage(),
       );
 
@@ -30,7 +30,7 @@ void main() {
         ),
       ).called(1);
 
-      expect(find.text('Go to names page'), findsOneWidget);
+      expect(find.text(l10n.goToNamesPage), findsOneWidget);
       final homeButton = find.descendant(
         of: find.byType(FloatingActionButton),
         matching: find.byIcon(Icons.arrow_forward),

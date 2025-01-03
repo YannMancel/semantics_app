@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
-import 'package:semantics_app/constants.dart';
+import 'package:semantics_app/core/constants.dart';
+import 'package:semantics_app/core/l10n/l10n_extension.dart';
 
 class NamesPage extends StatelessWidget {
   const NamesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Semantics.fromProperties(
+        title: Semantics.fromProperties(
           excludeSemantics: true,
           properties: SemanticsProperties(
             header: true,
-            sortKey: OrdinalSortKey(0),
-            label: 'This page displays a list of items. '
-                'Each item has a name and a button. '
-                'The button is located to the right of the item.',
+            sortKey: const OrdinalSortKey(0),
+            label: l10n.namesPageSemantics,
           ),
-          child: Text('Names Page'),
+          child: Text(l10n.namesPage),
         ),
       ),
       body: ListView.builder(
@@ -39,7 +39,7 @@ class NamesPage extends StatelessWidget {
               key: Key('${index}_list_tile'),
               properties: SemanticsProperties(
                 identifier: 'names_${index}_list_tile',
-                label: 'list tile of $name',
+                label: l10n.namesListTileSemantics(name),
               ),
               child: ListTile(
                 title: ExcludeSemantics(
@@ -50,7 +50,7 @@ class NamesPage extends StatelessWidget {
                   excludeSemantics: true,
                   properties: SemanticsProperties(
                     identifier: 'names_${index}_open_more_popup',
-                    label: 'button of $name to open more popup',
+                    label: l10n.namesButtonSemantics(name),
                     enabled: isEnable,
                     button: true,
                     onTap: isEnable ? () {} : null,

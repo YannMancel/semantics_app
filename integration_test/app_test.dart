@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:semantics_app/constants.dart';
+import 'package:semantics_app/core/constants.dart';
 import 'package:semantics_app/main.dart';
 
 void main() {
@@ -31,7 +34,14 @@ void main() {
         //   await tester.pumpAndSettle();
         // }
 
-        expect(find.text('Go to names page'), findsOneWidget);
+        final locale = Locale(Platform.localeName);
+        final l10n = lookupAppLocalizations(
+          AppLocalizations.supportedLocales.contains(locale)
+              ? locale
+              : AppLocalizations.supportedLocales.first,
+        );
+
+        expect(find.text(l10n.goToNamesPage), findsOneWidget);
         final homeButton = find.descendant(
           of: find.byType(FloatingActionButton),
           matching: find.byIcon(Icons.arrow_forward),

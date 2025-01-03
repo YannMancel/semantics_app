@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:semantics_app/home_page.dart';
+import 'package:semantics_app/pages/home_page.dart';
 
 import 'helper.dart';
 
@@ -10,11 +10,11 @@ void main() {
     'WHEN the page is displayed, '
     'THEN text and button are found.',
     (tester) async {
-      await tester.myPumpWidget(
+      final (:navigatorObserver, :l10n) = await tester.myPumpWidget(
         widget: const HomePage(),
       );
 
-      expect(find.text('Go to names page'), findsOneWidget);
+      expect(find.text(l10n.goToNamesPage), findsOneWidget);
       expect(
         find.descendant(
           of: find.byType(FloatingActionButton),
@@ -31,19 +31,19 @@ void main() {
     'THEN semantics are found.',
     (tester) async {
       final handler = tester.ensureSemantics();
-      await tester.myPumpWidget(
+      final (:navigatorObserver, :l10n) = await tester.myPumpWidget(
         widget: const HomePage(),
       );
 
       expect(
-        tester.getSemantics(find.text('Go to names page')).label,
-        equals('Go to names page'),
+        tester.getSemantics(find.text(l10n.goToNamesPage)).label,
+        equals(l10n.goToNamesPage),
       );
       expect(
         tester.getSemantics(find.byKey(const Key('button'))),
         matchesSemantics(
           identifier: 'home_go_to_names_page',
-          label: 'button to go to names page',
+          label: l10n.homeButtonSemantics,
           isEnabled: true,
           hasEnabledState: true,
           isButton: true,

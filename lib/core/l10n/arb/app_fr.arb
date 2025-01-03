@@ -1,0 +1,10 @@
+{
+  "homePageSemantics": "Cette page affiche un texte au centre et un bouton dans le coin inférieur droit.",
+  "homePage": "Page d'accueil",
+  "goToNamesPage": "Aller à la page des noms",
+  "homeButtonSemantics": "Bouton permettant d'accéder à la page des noms.",
+  "namesPageSemantics": "Cette page affiche une liste d'éléments. Chaque élément a un nom et un bouton. Le bouton est situé à droite de l'élément.",
+  "namesPage": "Page des noms",
+  "namesListTileSemantics": "Tuile de {name}.",
+  "namesButtonSemantics": "Bouton de {name} pour ouvrir la popup d'action complémentaire."
+}

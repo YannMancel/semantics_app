@@ -24,6 +24,9 @@ make dependencies
 
 * Linter
   * [flutter_lints][dependency_flutter_lints]
+* I18N
+  * [flutter_localizations][dependency_flutter_localizations]
+  * [flutter_intl][dependency_intl]
 * Tests
   * [mocktail][dependency_mocktail]
   * [integration_test][dependency_integration_test]
@@ -48,6 +51,8 @@ make dependencies
 [dependency_fvm]: https://fvm.app/
 [dependency_maestro]: https://maestro.mobile.dev/
 [dependency_flutter_lints]: https://pub.dev/packages/flutter_lints
+[dependency_flutter_localizations]: https://pub.dev/packages/flutter_localizations
+[dependency_intl]: https://pub.dev/packages/intl
 [dependency_mocktail]: https://pub.dev/packages/mocktail
 [dependency_integration_test]: https://pub.dev/packages/integration_test
 [useful_android_studio]: https://developer.android.com/studio

@@ -2,7 +2,7 @@ appId: com.example.semantics_app
 ---
 
 - assertVisible:
-    text: "button to go to names page"
+    text: "Button to go to names page."
 - tapOn:
     id: home_go_to_names_page
     retryTapIfNoChange: false
